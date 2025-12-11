@@ -12,7 +12,5 @@ jobs:
       - uses: 010DevX101/setup-seal@v0.0.1-rc.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       - name: Run
         run: seal run
