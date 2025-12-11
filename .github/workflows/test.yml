@@ -9,7 +9,8 @@ jobs:
     name: Setup seal
     runs-on: ubuntu-latest
     steps:
-      - uses: 010DevX101/setup-seal@v0.0.1-rc.4
+      - uses: actions/checkout@v4
+      - uses: 010DevX101/setup-seal@v0.0.1-rc.5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run
