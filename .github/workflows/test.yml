@@ -3,16 +3,20 @@ on:
   push:
     branches:
       - main
-
 jobs:
   run:
     name: Setup seal
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: 010DevX101/setup-seal@v0.0.1-rc.7
+      - uses: 010DevX101/setup-seal@v0.0.1-rc.6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test seal (before tmate)
+        run: |
+          echo $PATH
+          which seal
+          seal --version
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
       - name: Run
